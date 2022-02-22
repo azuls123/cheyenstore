@@ -1,0 +1,204 @@
+
+.fill {
+  min-height: 100%;
+  height: 100%;
+}
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #170229 !default;
+$black: #000 !default;
+
+$blue: rgb(10.6%, 63.5%, 96.5%) !default;
+$blue-light: rgb(70.2%, 97.6%, 100%) !default;
+$indigo: rgb(40%, 6.3%, 94.9%) !default;
+$indigo-light: rgb(64.3%, 27.5%, 94.1%) !default;
+$purple: rgb(43.5%, 25.9%, 75.7%) !default;
+$purple-light: rgb(49.4%, 35.7%, 75.3%) !default;
+$pink: rgb(91.8%, 22.4%, 72.2%) !default;
+$pink-light: rgb(90.6%, 43.1%, 77.3%) !default;
+$red: rgb(89.4%, 29.8%, 33.3%) !default;
+$red-light: rgb(85.9%, 44.3%, 47.1%) !default;
+$orange: rgb(94.5%, 71.4%, 20%) !default;
+$orange-light: rgb(90.6%, 78.4%, 51.4%) !default;
+$yellow: rgb(100%, 75.7%, 2.7%) !default;
+$yellow-light: rgb(100%, 91.4%, 65.1%) !default;
+$green: rgb(23.5%, 94.9%, 50.6%) !default;
+$green-light: rgb(65.9%, 92.5%, 76.1%) !default;
+$teal: rgb(24.7%, 50.6%, 63.5%) !default;
+$teal-light: rgb(58.8%, 70.2%, 76.1%) !default;
+$cyan: rgb(19.6%, 98.4%, 88.6%) !default;
+$cyan-light: rgb(72.5%, 100%, 96.9%) !default;
+$pure-red: rgb(100%, 0%, 0%) !default;
+$pure-red-light: rgb(100%, 33.3%, 33.3%) !default;
+
+$primary: $blue !default;
+$secondary: $pink !default;
+$success: $green !default;
+$info: $purple !default;
+$warning: $yellow !default;
+$danger: $red !default;
+
+$primary-light: $blue-light !default;
+$secondary-light: $pink-light !default;
+$success-light: $green-light !default;
+$info-light: $purple-light !default;
+$warning-light: $yellow-light !default;
+$danger-light: $red-light !default;
+$light: $blue-light !default;
+$dark: $gray-900 !default;
+
+$min-contrast-ratio: 1.2 !default;
+// Glow Functions
+@mixin show-shadown($color) {
+  text-shadow: 0 0 1px rgba($color, 60%), 0 0 3px rgba($color, 50%),
+    0 0 0.5rem rgba($color, 30%), 0 0 2rem rgba($color, 20%);
+}
+@mixin set-font($color) {
+  font-weight: bolder;
+  color: $color;
+}
+// glow styles
+// glow primary
+.glow-primary {
+  @include show-shadown($primary);
+}
+.glow-white {
+  @include show-shadown($white);
+}
+.font-primary {
+  @include set-font($primary);
+}
+.font-primary-light {
+  @include set-font($primary-light);
+}
+// glow secondary
+.glow-secondary {
+  @include show-shadown($secondary);
+}
+.font-secondary {
+  @include set-font($secondary);
+}
+.font-secondary-light {
+  @include set-font($secondary-light);
+}
+// glow info
+.glow-info {
+  @include show-shadown($info);
+}
+.font-info {
+  @include set-font($info);
+}
+.font-info-light {
+  @include set-font($info-light);
+}
+
+// glow success
+.glow-success {
+  @include show-shadown($success);
+}
+.font-success {
+  @include set-font($success);
+}
+.font-success-light {
+  @include set-font($success-light);
+}
+
+// glow success
+.glow-warning {
+  @include show-shadown($warning);
+}
+.font-warning {
+  @include set-font($warning);
+}
+.font-warning-light {
+  @include set-font($warning-light);
+}
+
+// glow danger
+.glow-danger {
+  @include show-shadown($danger);
+}
+.font-danger {
+  @include set-font($danger);
+}
+.font-danger-light {
+  @include set-font($danger-light);
+}
+
+// .list-group-item {
+//   position: relative;
+//   display: block;
+//   padding: 0.5rem 1rem;
+//   /* color: #fff; */
+//   text-decoration: none;
+//   background-color: unset;
+//   border: 10 solid rgb(111 66 193 / 100%) !important;
+// }
+
+@mixin border-list($color, $color-light) {
+  background-color: $color !important;
+  box-shadow: 0 0 1px rgba($color-light, 60%), 0 0 3px rgba($color-light, 50%),
+    0 0 0.5rem rgba($color-light, 30%), 0 0 2rem rgba($color-light, 20%);
+}
+// primary list group
+.list-group.primary {
+  background-color: $primary !important;
+  border: 10 solid rgb(111 66 193 / 100%) !important;
+}
+.list-group.primary :hover {
+  background-color: $primary-light !important;
+}
+
+// secondary list group
+.list-group.secondary {
+  background-color: $secondary !important;
+}
+.list-group.secondary :hover {
+  background-color: $secondary-light !important;
+}
+
+// success list group
+.list-group.success {
+  @include border-list($info, $success-light);
+  border-radius: 2px;
+  border: 1px solid rgb($success-light, 100%) !important;
+}
+.list-group.success :hover {
+  @include border-list($success-light, $success);
+  color: $primary;
+  @include show-shadown($primary);
+}
+
+// info list group
+.list-group.info {
+  @include border-list($info, $info-light);
+  border-radius: 2px;
+  border: 1px solid rgb($info-light, 100%) !important;
+}
+.list-group.info :hover {
+  @include border-list($info-light, $info);
+  color: $primary;
+  @include show-shadown($primary);
+}
+
+// warning list group
+.list-group.warning {
+  background-color: $warning !important;
+}
+.list-group.warning :hover {
+  background-color: $warning-light !important;
+}
+// danger list group
+.list-group.danger {
+  background-color: $danger !important;
+}
+.list-group.danger :hover {
+  background-color: $danger-light !important;
+}

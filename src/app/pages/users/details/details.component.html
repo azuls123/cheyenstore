@@ -1,0 +1,43 @@
+<div class="card mt-2 mb-3">
+  <div class="card-header">
+    <button class="btn btn-sm btn-outline-primary" (click)="onGoBackToList()" title="Regresar a la Lista"><i class="bi bi-arrow-bar-left"></i></button>
+    &nbsp;Detalles del Usuario
+  </div>
+  <div class="card-body">
+    <ul class="list-group list-group-flush success">
+      <li class="list-group-item d-flex align-items-center">
+        <h6><b>Ci:&nbsp;</b></h6> <h6>{{user.ci}}</h6>
+      </li>
+      <li class="list-group-item d-flex align-items-center">
+        <h6><b>Nombres:&nbsp;</b></h6> <h6>{{user.nombre}}</h6>
+      </li>
+      <li class="list-group-item d-flex align-items-center">
+        <h6><b>Apellidos:&nbsp;</b></h6> <h6>{{user.apellido}}</h6>
+      </li>
+      <li class="list-group-item d-flex align-items-center">
+        <h6><b>Teléfono:&nbsp;</b></h6> <h6>{{user.telefono}} </h6>
+      </li>
+      <li class="list-group-item d-flex align-items-center">
+        <h6><b>Dirección:&nbsp;</b></h6> <h6>{{user.direccion}}</h6>
+      </li>
+      <li class="list-group-item d-flex align-items-center">
+        <h6><b>Correo Electrónico:&nbsp;</b></h6> <h6>{{user.correo}}</h6>
+      </li>
+      <li class="list-group-item d-flex align-items-center">
+        <h6><b>Fecha de Inicio:&nbsp;</b></h6> <h6>{{user.fechaInicio}}</h6>
+      </li>
+    </ul>
+  </div>
+  <div class="card-footer">
+    <div class="btn-group" role="group">
+      <button class="btn btn-outline-warning m-1" (click)="onGoToEdit()">
+        <i class="bi bi-pencil-square glow-warning font-warning-light"></i>
+        Editar
+      </button>
+      <button class="btn btn-outline-danger m-1" (click)="onDelete()">
+        <i class="bi bi-trash  glow-danger font-danger-light"></i>
+        Borrar
+      </button>
+    </div>
+  </div>
+</div>

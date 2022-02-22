@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "cheyenstore": {
+      "hosting": {
+        "cheyenstore": [
+          "cheyenstore"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "cheyenstore"
+  }
+}
